@@ -1,7 +1,7 @@
 {
-  "name": "datapower",
+  "name": "datapowerapi",
   "version": "1.0.0",
-  "description": "IBM DataPower Nodejs xml api ",
+  "description": "IBM DataPower xml api using NodeJs",
   "main": "src/datapowerxmlapi.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,12 +18,19 @@
     "power",
     "nodejs",
     "import",
-    "export"
+    "export",
+    "soap",
+    "service"
   ],
   "author": "Raj Bandi (http://www.rajbandi.dev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Rajbandi/DataPowerApi/issues"
   },
-  "homepage": "https://github.com/Rajbandi/DataPowerApi#readme"
+  "homepage": "https://github.com/Rajbandi/DataPowerApi#readme",
+  "dependencies": {
+    "needle": "^2.3.2",
+    "xml2js": "^0.4.23",
+    "xml2js-xpath": "^0.11.0"
+  }
 }
