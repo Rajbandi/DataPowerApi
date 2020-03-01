@@ -1,8 +1,8 @@
-
-
-/**
- * Data Power status types
- */
+/***
+ *  DataPower XML management interface API
+ *  Author: Raj Bandi (http://www.rajbandi.dev)
+ *  Date: 15-Nov-2019
+ ***/
 const DataPowerStatusTypes = {
   ActiveUsers: "ActiveUsers",
   APISubscriberCacheStatus: "APISubscriberCacheStatus",
@@ -294,6 +294,7 @@ const DataPowerStatusTypes = {
  */
 const DataPowerConfigTypes = {
   AllClasses: "all-classes",
+  AllObjects: "all-objects",
   AAAPolicy: "AAAPolicy",
   Domain: "Domain",
   LDAPSearchParameters: "LDAPSearchParameters",
@@ -597,7 +598,7 @@ const DataPowerObjectTypes = {
 
 const DataPowerExportFormats = {
   Zip : "ZIP",
-  Xml : "Xml"
+  Xml : "XML"
 }
 
 module.exports = {

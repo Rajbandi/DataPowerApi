@@ -1,3 +1,8 @@
+/***
+ *  DataPower XML management interface API
+ *  Author: Raj Bandi (http://www.rajbandi.dev)
+ *  Date: 15-Nov-2019
+ ***/
 const DataPowerObjects = require("./datapowerobjects");
 const DataPowerObjectTypes = require("./datapowerenums").DataPowerObjectTypes;
 const xpath = require('xml2js-xpath');
@@ -26,7 +31,28 @@ class DataPowerParser {
             objPropName = objPropName.replace("env:", "");
     }
 
-    objPropName = DataPowerParser.initCap(objPropName);
+    
+    if(objPropName.indexOf("-"))
+    {
+      let tokens = objPropName.split("-");
+      let allTokens = [];
+      
+      let firstToken = tokens[0];
+      allTokens.push(firstToken);
+      
+      if(tokens.length>1)
+      {
+        tokens.shift();
+      tokens.forEach(token=>{
+        allTokens.push(DataPowerParser.initCap(token));
+      })
+      }
+      objPropName = allTokens.join('');
+    }
+    else
+    {
+      objPropName = DataPowerParser.initCap(objPropName);
+    }
     return objPropName;
   }
 
@@ -120,15 +146,15 @@ class DataPowerParser {
     }
     return obj;
   }
-  static parseDPObject(name, xmlObj) {
+  static parseDPObject(xmlObj) {
     let obj;
     try {
+
       let basePart =  xpath.find(xmlObj, "//dp:response")[0]; 
       if(!basePart)
       {
           basePart  =  xpath.find(xmlObj, "//env:Body")[0]; 
       }
-      console.log('---------', basePart);
       obj = DataPowerParser.parseObject(basePart);
       // let status = xpath.find(basePart, "//dp:status");
     

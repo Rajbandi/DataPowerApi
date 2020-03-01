@@ -1,3 +1,8 @@
+/***
+ *  DataPower XML management interface API
+ *  Author: Raj Bandi (http://www.rajbandi.dev)
+ *  Date: 15-Nov-2019
+ ***/
 const DataPowerConfigTypes = {
     AllClasses: "all-classes",
     AAAPolicy: "AAAPolicy",

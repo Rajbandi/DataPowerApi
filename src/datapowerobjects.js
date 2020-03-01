@@ -1,3 +1,8 @@
+/***
+ *  DataPower XML management interface API
+ *  Author: Raj Bandi (http://www.rajbandi.dev)
+ *  Date: 15-Nov-2019
+ ***/
 const DataPowerObjectTypes = require("./datapowerenums").DataPowerObjectTypes;
 
 class DPObject{
